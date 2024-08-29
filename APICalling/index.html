@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>   
+<head>
+    <title>Application Programming interface</title>
+  </head>
+  <style>
+    .main{
+        display: flex;
+        flex-wrap:wrap;
+        text-align:center;
+        background-color: rgb(222, 230, 173);
+        
+
+    }
+    .card{
+        border: 2px solid rgb(96, 152, 83);
+        padding: 5px;
+        margin : 5px;
+        
+    }
+     img{
+        height: 300px;
+     }
+  </style>
+<body>
+   
+    <div class="main">
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+
+    </div>
+
+
+
+
+<script>
+    let cards = document.querySelectorAll(".card");
+    async function getdata(){
+        let responce = await fetch("https://dummyjson.com/products")
+        let data =await responce.json();
+        console.log(data.products );
+
+       
+        cards.forEach((element,i)=>{
+            element.getElementsByTagName("img")[0].src=data.products[i].images[0];
+            element.getElementsByTagName("p")[0].innerHTML=data.products[i].price;
+            element.getElementsByTagName("span")[0].innerHTML=data.products[i].brand;
+            
+        })
+    }
+      getdata();
+      
+</script>
+</body>    
+</html>    

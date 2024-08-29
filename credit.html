@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Amount</title>
+    <link rel="stylesheet" href="credit.css">
+</head>
+<body>
+    <section>
+        <button type="button" onclick="openHome(event)" class="home-button"><i class="fas fa-home"></i> Home</button>
+    </section>
+    <div>
+    <input type="number" placeholder="Enter credit amount" id="input"> <br />
+    <button class="button"  onclick="credit()">credit</button><br/>
+    <h2 id="heading"></h2>
+    </div>
+    <script>
+         const amount=20000;
+        function credit(){
+           
+           let addAmount= document.getElementById("input").value;
+           totalAmount=amount+parseInt(addAmount);
+           document.getElementById("heading").innerText=`Total Amount: ${totalAmount}`;
+           amount=totalAmount;
+
+        }
+
+        function openHome(){
+                event.preventDefault();
+                window.location.href="loginpage.html";
+        }
+       
+    </script>
+</body>
+
+</html>

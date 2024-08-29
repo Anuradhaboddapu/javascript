@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>   
+<head>
+    <title>Boy's Wear</title> 
+    <style>
+        body{
+            background-color: lavender;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .main{
+            display:flex;
+            flex-wrap: wrap;
+            text-align: center;
+            margin: 10px;
+            margin-left: 80px;
+
+        }
+        .main div{
+            border: 3px solid white;
+            padding: 3px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        .main div:hover{
+        opacity: 0.5;
+      }
+       
+      button {
+        padding: 10px 20px;
+        background-color: #fff;
+        border: 1px solid rgb(183, 143, 201);
+        border-color: black;
+        border-radius: 5px;
+    }
+       button:hover {
+        background-color: rgb(183, 143, 201);
+    }
+    .sub{
+         margin-left: 30%;
+         height: 40px;
+         background-color:  rgb(183, 143, 201);
+         padding: 10px;
+         width: 600px;
+         
+       }
+
+       input{
+        height:25px;
+        padding: 5px;
+        background-color: lavender;
+       }
+      
+    </style>
+</head>
+<body>   
+    <a href="kidswear.html"><button>Back</button></a>
+   
+    <div class="sub">
+    <form action="">
+        <input type="number"placeholder="Enter Min value" id="minVal">
+        <input type="number"placeholder="Enter Max value"id="maxVal">
+        <input type="button" value="filter" id="myfilter">
+    </form>
+    </div>
+    <div class="main">
+
+        <div>
+            <img src="images/image79.jpg "width="350px" height="300px">
+             <h2>Peter England</h2>
+             <h4 class="box" data-value="500">Price - 500</h4>
+            </div>     
+        <div>
+            <img src="images/image80.jpg"width="350px" height="300px">
+            <h2>Gucci</h2>
+            <h4 class="box" data-value="1000">Price - 1000</h4>     
+        </div>
+        <div>
+            <img src="images/image81.jpg"width="350px" height="300px">
+            <h2>Tom Ford</h2>
+            <h4 class="box" data-value="1200">Price - 1200</h4>     
+        </div>
+        <div>
+            <img src="images/image82.jpg"width="350px" height="300px">
+            <h2>Tommy Hilfiger</h2>
+            <h4 class="box" data-value="1500">Price - 1500</h4>     
+        </div>
+        <div>
+            <img src="images/image83.jpg"width="350px" height="300px">
+            <h2>PRalph Lauren</h2>
+             <h4 class="box" data-value="1700">Price - 1700</h4>     
+        </div>
+        <div>
+            <img src="images/image84.jpg"width="350px" height="300px">
+             <h2>Redtape</h2>
+             <h4 class="box" data-value="2000">Price - 2000</h4>     
+        </div>
+        
+        <div>
+            <img src="images/image85.jpg"width="350px" height="300px">
+            <h2>Allen Solly</h2>
+            <h4 class="box" data-value="2500">Price - 2500</h4>     
+        </div>
+        <div>
+            <img src="images/image86.jpg"width="350px" height="300px">
+            <h2>Jack & Jone<h2>
+            <h4 class="box" data-value="2700">Price - 2700</h4>     
+        </div>
+        <div>
+            <img src="images/image87.jpg"width="350px" height="300px">
+            <h2>Raymond</h2>
+            <h4 class="box" data-value="3000">Price - 3000</h4>     
+        </div>
+        <div>
+            <img src="images/image88.jpg"width="350px" height="300px">
+             <h2>Arrow<h2>
+             <h4 class="box" data-value="3200">Price - 3200</h4>     
+        </div>
+        <div>
+            <img src="images/image89.jpg"width="350px" height="300px">
+             <h2>Levi's<h2>
+             <h4 class="box" data-value="3500">Price - 3500</h4>     
+        </div>
+        <div>
+            <img src="images/image108.jpg"width="350px" height="300px">
+             <h2>Perter<h2>
+             <h4 class="box" data-value="3500">Price - 3500</h4>     
+        </div>
+       
+       
+
+    </div>
+    <script>
+        const filterButton = document.getElementById('myfilter');
+        const box = document.querySelectorAll('.main > div');
+        
+        filterButton.addEventListener('click', function() {
+            const minVal = parseInt(document.getElementById('minVal').value);
+            const maxVal = parseInt(document.getElementById('maxVal').value);
+            
+            box.forEach(function(card) {
+                const dataValue = parseInt(card.querySelector('.box').getAttribute('data-value'));
+                
+                if ((isNaN(minVal) || dataValue >= minVal) && (isNaN(maxVal) || dataValue <= maxVal)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

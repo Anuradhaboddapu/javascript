@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let pin=prompt("enter the Pin number:");
+        function resultAccount(event){
+            event.defaultPrevented();
+
+            if(pin === 9988){
+                window.location.href="accountDetails.html";
+            }
+            else{
+                alert("please enter correct Pin");
+                prompt("enterthe Pin number: ");
+            }
+        }
+    </script>
+</body>
+</html>
